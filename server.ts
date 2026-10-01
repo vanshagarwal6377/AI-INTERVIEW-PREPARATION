@@ -14,7 +14,9 @@ const PORT = 3000;
 app.use(express.json({ limit: "10mb" }));
 
 // DB file path
-const DB_FILE = path.join(process.cwd(), "database.json");
+const DB_FILE = process.env.VERCEL
+  ? path.join("/tmp", "database.json")
+  : path.join(process.cwd(), "database.json");
 
 // Define basic interface for mock database
 interface DBState {
@@ -1379,4 +1381,8 @@ async function startServer() {
   });
 }
 
-startServer();
+if (!process.env.VERCEL) {
+  startServer();
+}
+
+export default app;
