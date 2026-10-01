@@ -1,0 +1,8 @@
+{
+  "name": "AI Interview Preparation Platform",
+  "description": "An advanced full-stack platform simulating technical and HR company interviews using Gemini AI, with active voice/text mode, interactive coding, resume analysis, and customized recovery study plans.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
