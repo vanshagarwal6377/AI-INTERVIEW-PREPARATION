@@ -30,7 +30,7 @@ interface DBState {
 const DEFAULT_DB: DBState = {
   users: [
     {
-      name: "Vansh Agarwal",
+      name: "Demo Candidate",
       email: "demo@example.com",
       password: "demo-password",
       isVerified: true,
@@ -694,7 +694,8 @@ app.get("/api/auth/me", (req, res) => {
   if (!user) {
     return res.status(404).json({ error: "Profile not found." });
   }
-  res.json({ user });
+  const { password: _password, ...publicUser } = user;
+  res.json({ user: publicUser });
 });
 
 
