@@ -6,7 +6,6 @@ export default async function handler(req: Request, res: Response) {
 		app(req, res);
 	} catch (error) {
 		console.error("Express API handler failed:", error);
-		const details = error instanceof Error ? error.message : String(error);
-		return res.status(500).json({ error: "The API request could not be handled.", details });
+		return res.status(500).json({ error: "The API request could not be handled." });
 	}
 }
